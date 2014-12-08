@@ -1,19 +1,18 @@
-#javascript-oo学习笔记
+#javascript-oo 学习笔记
 
 ##一：类、对象、实例
 
 ###（1）类(class)：
 
-类是现实世界或思维世界中的实体在计算机中的反映，它将数据以及这些数据上的操作封装在一起。
-
+类是现实世界或思维世界中的某类东西在计算机中的反映，它反映了某样东西，比如现实生活中的人就是类。
 
 ###（2）对象(object)：
 
-对象是具有类类型的变量。类和对象是面向对象编程技术中的最基本的概念。
+对象是具有类类型的变量。是在类中，具有某特性的一类。比如男人就是一个对象，属于人中的某类人。
 
 ###（3）实例(instance)：
 
-具体到某个东西，是实实在在的某样东西。
+具体到某个东西，是实实在在的某样东西。比如实际的某个人。他具体到某个人，是实实在在的人。
 
 ###（4）类、对象、实例三者之间的关系
 
@@ -23,7 +22,13 @@
 
 某类人是对象
 
-你是实例
+某个人是实例
+
+思维导图：
+
+![Alt text](类.jpg)
+
+由思维导图可以发现，在类中，按不同属性，可以分为多个对象，这些对象，再按照一的原则，就可以实例化出不同的实体，既：类-->对象-->实例。
 
 ##二：JS中如何定义class
 
@@ -38,9 +43,46 @@
 }
 </code></pre>
 
+代码中定义的类Person,其首字母要大写。在Person中，定义了三个属性，分别是名字、年龄、性别。
+
 ##三：JS中如何定义属性、方法（类方法、实例方法）
 
+###(1)在JS中，属性的定义如下：
 
+<pre><code>this.name = name;
+this.age = age;
+this.sex = sex;
+</code></pre>
+
+上述代码中，给函数Person定义三个的属性，分别为名字、年龄和性别。
+
+###(2)在JS中，类方法的定义如下：
+
+<pre><code>function Person(name,age,sex){
+  this.name = name;
+  this.age = age;
+  this.sex = sex;
+}
+Person.HelloWorld = function() {
+  return 'HelloWorld'
+}
+</code></pre>
+
+在代码中，定义了一个类Person，然后在里面定义添加了一个名为HelloWorld的属性。
+
+###(3)在JS中，实例方法的定义如下：
+
+<pre><code>function Person(name,age,sex){
+  this.name = name;
+  this.age = age;
+  this.sex = sex;
+}
+Person.prototype.HelloWorld = function() {
+  return 'HelloWorld';
+};
+</code></pre>
+
+上诉代码，将类Person中的HelloWorld实例化，即附值给变量HelloWorld。达到实例化的效果。
 
 ##四：继承、多态、封装
 
