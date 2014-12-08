@@ -29,9 +29,14 @@
 
 在js编程中，类是对象的模板，定义了同一组对象或实体共有的属性和方法。
 
-定义方法如下：
+<p>定义方法如下:</p>
 
-
+<pre><code>function Person(name, age, sex){
+  this.name = name;
+  this.age = age;
+  this.sex = sex;
+}
+</code></pre>
 
 ##三：JS中如何定义属性、方法（类方法、实例方法）
 
